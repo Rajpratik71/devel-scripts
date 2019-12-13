@@ -145,6 +145,7 @@ def docmderrout(cmd, outfile, nf=None):
       return rc
   except IOError:
     error("unable to open %s for writing" % outfile)
+  return 1
 
 
 # invoke command, reading from one file and writing to another

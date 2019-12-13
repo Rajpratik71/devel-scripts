@@ -1712,8 +1712,15 @@ function git_track_remote_branch() {
 alias hh='history 25'
 alias e=startemacsclient
 alias ge=startemacs
-alias psaxu='ps -ejH'
-alias psaxuw='ps -efwwjH'
+alias emgr=emacsgoroot
+alias embr=emacsbranched
+if [ "x${OSFLAVOR}" = "xDarwin" ]; then
+  alias psaxu='ps -ef'
+  alias psaxuw='ps -efww'
+else
+  alias psaxu='ps -ejH'
+  alias psaxuw='ps -efwwjH'
+fi
 alias svnstat='svn status | egrep -v "^\?"'
 alias svnaddexec='svn propset svn:executable on'
 alias more=less
